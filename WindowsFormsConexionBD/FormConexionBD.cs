@@ -31,6 +31,7 @@ namespace WindowsFormsConexionBD
                 btnInsertCustomJob.Enabled = true;
                 btnVerJobs.Enabled = true;
                 btnShowEmployees.Enabled = true;
+                btnInsertCustomJobLinq.Enabled = true;
                 lblCerrarConexion.Text = "";
             }
             else
@@ -124,24 +125,7 @@ namespace WindowsFormsConexionBD
 
         private void btnInsertCustomJob_Click(object sender, EventArgs e)
         {
-            decimal? minSalary;
-            if (nmrMinSalary.Text == "")
-                minSalary = null;
-            else
-                minSalary = nmrMinSalary.Value;
-
-            decimal? maxSalary;
-            if (nmrMaxSalary.Text == "")
-                maxSalary = null;
-            else
-                maxSalary = nmrMaxSalary.Value;
-            
-            Job job = new Job(
-                -1,
-                txtJobTitle.Text,
-                minSalary,
-                maxSalary
-            );
+            Job job = CreateJobObject();
             
             bool inserted = InsertCustomJob(job);
             if (inserted)
@@ -154,6 +138,29 @@ namespace WindowsFormsConexionBD
                 lblInsertedCustomJob.Text = "ERROR";
                 lblInsertedCustomJob.ForeColor = Color.Red;
             }
+        }
+
+        private Job CreateJobObject()
+        {
+            decimal? minSalary;
+            if (nmrMinSalary.Text == "")
+                minSalary = null;
+            else
+                minSalary = nmrMinSalary.Value;
+
+            decimal? maxSalary;
+            if (nmrMaxSalary.Text == "")
+                maxSalary = null;
+            else
+                maxSalary = nmrMaxSalary.Value;
+
+            Job job = new Job(
+                -1,
+                txtJobTitle.Text,
+                minSalary,
+                maxSalary
+            );
+            return job;
         }
 
         private bool InsertCustomJob(Job job)
@@ -280,6 +287,51 @@ namespace WindowsFormsConexionBD
         {
             FormSelectEmployees formSelectEmployees = new FormSelectEmployees(connection);
             formSelectEmployees.ShowDialog();
+        }
+
+        private void btnInsertCustomJobLinq_Click(object sender, EventArgs e)
+        {
+            InsertCustomJobLinq();
+        }
+
+        private void InsertCustomJobLinq()
+        {
+            try
+            {
+                LinqToSQLDataContext dc = new LinqToSQLDataContext();
+
+                jobs job = new jobs();
+
+                decimal? minSalary = GetSalaryValue(nmrMinSalary);
+                decimal? maxSalary = GetSalaryValue(nmrMaxSalary);
+
+                job.job_title = txtJobTitle.Text;
+                job.min_salary = minSalary;
+                job.max_salary = maxSalary;
+
+                dc.jobs.InsertOnSubmit(job);
+                dc.SubmitChanges();
+
+                lblInsertedCustomJob.Text = "Insertado correctamente! ID: " + job.job_id;
+                lblInsertedCustomJob.ForeColor = Color.Green;
+            }
+            catch (Exception ex)
+            {
+                lblInsertedCustomJob.Text = "ERROR";
+                lblInsertedCustomJob.ForeColor = Color.Red;
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private decimal? GetSalaryValue(NumericUpDown nmr)
+        {
+            decimal? salary;
+            if (nmr.Text == "")
+                salary = null;
+            else
+                salary = nmrMinSalary.Value;
+
+            return salary;
         }
     }
 }

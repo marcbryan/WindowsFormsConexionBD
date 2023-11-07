@@ -47,6 +47,7 @@
             this.btnBorrarMinSalary = new System.Windows.Forms.Button();
             this.btnBorrarMaxSalary = new System.Windows.Forms.Button();
             this.btnShowEmployees = new System.Windows.Forms.Button();
+            this.btnInsertCustomJobLinq = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nmrMinSalary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrMaxSalary)).BeginInit();
             this.SuspendLayout();
@@ -200,7 +201,7 @@
             this.btnInsertCustomJob.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnInsertCustomJob.Enabled = false;
             this.btnInsertCustomJob.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertCustomJob.Location = new System.Drawing.Point(318, 580);
+            this.btnInsertCustomJob.Location = new System.Drawing.Point(302, 580);
             this.btnInsertCustomJob.Name = "btnInsertCustomJob";
             this.btnInsertCustomJob.Size = new System.Drawing.Size(135, 36);
             this.btnInsertCustomJob.TabIndex = 12;
@@ -213,7 +214,7 @@
             this.lblInsertedCustomJob.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblInsertedCustomJob.AutoSize = true;
             this.lblInsertedCustomJob.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInsertedCustomJob.Location = new System.Drawing.Point(201, 630);
+            this.lblInsertedCustomJob.Location = new System.Drawing.Point(185, 676);
             this.lblInsertedCustomJob.Name = "lblInsertedCustomJob";
             this.lblInsertedCustomJob.Size = new System.Drawing.Size(0, 25);
             this.lblInsertedCustomJob.TabIndex = 13;
@@ -268,11 +269,25 @@
             this.btnShowEmployees.UseVisualStyleBackColor = true;
             this.btnShowEmployees.Click += new System.EventHandler(this.btnShowEmployees_Click);
             // 
+            // btnInsertCustomJobLinq
+            // 
+            this.btnInsertCustomJobLinq.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnInsertCustomJobLinq.Enabled = false;
+            this.btnInsertCustomJobLinq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertCustomJobLinq.Location = new System.Drawing.Point(445, 580);
+            this.btnInsertCustomJobLinq.Name = "btnInsertCustomJobLinq";
+            this.btnInsertCustomJobLinq.Size = new System.Drawing.Size(135, 64);
+            this.btnInsertCustomJobLinq.TabIndex = 18;
+            this.btnInsertCustomJobLinq.Text = "Insertar job con Linq";
+            this.btnInsertCustomJobLinq.UseVisualStyleBackColor = true;
+            this.btnInsertCustomJobLinq.Click += new System.EventHandler(this.btnInsertCustomJobLinq_Click);
+            // 
             // FormConexionBD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 728);
+            this.Controls.Add(this.btnInsertCustomJobLinq);
             this.Controls.Add(this.btnShowEmployees);
             this.Controls.Add(this.btnBorrarMaxSalary);
             this.Controls.Add(this.btnBorrarMinSalary);
@@ -321,6 +336,7 @@
         private System.Windows.Forms.Button btnBorrarMinSalary;
         private System.Windows.Forms.Button btnBorrarMaxSalary;
         private System.Windows.Forms.Button btnShowEmployees;
+        private System.Windows.Forms.Button btnInsertCustomJobLinq;
     }
 }
 
