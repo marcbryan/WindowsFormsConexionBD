@@ -201,7 +201,7 @@
             this.btnInsertCustomJob.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnInsertCustomJob.Enabled = false;
             this.btnInsertCustomJob.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertCustomJob.Location = new System.Drawing.Point(302, 580);
+            this.btnInsertCustomJob.Location = new System.Drawing.Point(302, 569);
             this.btnInsertCustomJob.Name = "btnInsertCustomJob";
             this.btnInsertCustomJob.Size = new System.Drawing.Size(135, 36);
             this.btnInsertCustomJob.TabIndex = 12;
@@ -214,7 +214,7 @@
             this.lblInsertedCustomJob.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblInsertedCustomJob.AutoSize = true;
             this.lblInsertedCustomJob.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInsertedCustomJob.Location = new System.Drawing.Point(185, 676);
+            this.lblInsertedCustomJob.Location = new System.Drawing.Point(185, 665);
             this.lblInsertedCustomJob.Name = "lblInsertedCustomJob";
             this.lblInsertedCustomJob.Size = new System.Drawing.Size(0, 25);
             this.lblInsertedCustomJob.TabIndex = 13;
@@ -274,7 +274,7 @@
             this.btnInsertCustomJobLinq.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnInsertCustomJobLinq.Enabled = false;
             this.btnInsertCustomJobLinq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertCustomJobLinq.Location = new System.Drawing.Point(445, 580);
+            this.btnInsertCustomJobLinq.Location = new System.Drawing.Point(445, 569);
             this.btnInsertCustomJobLinq.Name = "btnInsertCustomJobLinq";
             this.btnInsertCustomJobLinq.Size = new System.Drawing.Size(135, 64);
             this.btnInsertCustomJobLinq.TabIndex = 18;
