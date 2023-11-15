@@ -46,6 +46,11 @@ namespace Model
 
         public override string ToString()
         {
+            string firstName = (this.firstName == null) ? "null" : this.firstName;
+            string phoneNumber = (this.phoneNumber == null) ? "null" : this.phoneNumber;
+            string managerId = (this.managerId == null) ? "null" : this.managerId.ToString();
+            string departmentId = (this.departmentId == null) ? "null" : this.departmentId.ToString();
+
             return "{ employee_id: " + employeeId + ", first_name: " + firstName + ", last_name: " + lastName
                     + ", email: " + email + ", phone_number: " + phoneNumber + ", hire_date: " + hireDate
                     + ", job_id: " + jobId + ", salary: " + salary + ", manager_id: " + managerId
